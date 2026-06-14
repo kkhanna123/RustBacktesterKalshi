@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  rust:
+    name: Rust backtester (build + test)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backtester
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+      - name: Cache cargo
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            backtester/target
+          key: ${{ runner.os }}-cargo-${{ hashFiles('backtester/Cargo.lock') }}
+      - name: Build (default)
+        run: cargo build --release --verbose
+      - name: Test (default features)
+        run: cargo test --verbose
+      - name: Test (clickhouse feature)
+        run: cargo test --features clickhouse --verbose
+      - name: Build release with all features
+        run: cargo build --release --features clickhouse
+
+  python:
+    name: Adapters (unit tests)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: pip install requests websocket-client cryptography pandas numpy scipy pyarrow matplotlib
+      - name: Adapter (collector) unit tests
+        run: python -m unittest discover -s adapters/tests
+      - name: Feed framework unit tests
+        run: cd adapters && python -m unittest discover -s feeds/tests
+      - name: Converter unit tests
+        run: cd adapters/convert && python -m unittest discover -s tests
+
+  windows-rust:
+    name: Rust backtester (Windows build)
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: backtester
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Build (cross-platform check)
+        run: cargo build --release --features clickhouse
+      - name: Test
+        run: cargo test

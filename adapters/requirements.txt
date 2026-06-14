@@ -1,0 +1,5 @@
+requests
+websocket-client==1.8.0
+cryptography
+pandas
+pyarrow

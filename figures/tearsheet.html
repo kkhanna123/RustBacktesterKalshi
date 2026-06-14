@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Backtest Tearsheet — logistic_arb</title>
+<style>
+  :root { --bg:#0d1117; --panel:#161b22; --fg:#e6edf3; --muted:#8b949e; --accent:#2f81f7; --red:#f85149; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
+  .wrap { max-width:980px; margin:0 auto; padding:24px; }
+  h1 { font-size:20px; margin:0 0 4px; }
+  .sub { color:var(--muted); margin-bottom:20px; font-size:13px; }
+  .grid { display:grid; grid-template-columns:1fr 320px; gap:20px; align-items:start; }
+  .panel { background:var(--panel); border:1px solid #30363d; border-radius:10px; padding:16px; }
+  .panel h2 { font-size:13px; color:var(--muted); margin:0 0 10px; text-transform:uppercase; letter-spacing:.05em; }
+  table { width:100%; border-collapse:collapse; font-size:13px; }
+  td { padding:5px 4px; border-bottom:1px solid #21262d; }
+  td.k { color:var(--muted); }
+  td.v { text-align:right; }
+  svg { width:100%; height:auto; display:block; }
+  .pnl-pos { color:#3fb950; } .pnl-neg { color:var(--red); }
+  @media (max-width:760px) { .grid { grid-template-columns:1fr; } }
+</style></head>
+<body><div class="wrap">
+  <h1>Backtest Tearsheet</h1>
+  <div class="sub">strategy: <b>logistic_arb</b> &middot; PnL <b class="pnl-neg">-5.19 USD (-0.52%)</b> &middot; 161 equity points</div>
+  <div class="grid">
+    <div>
+      <div class="panel">
+        <h2>Equity curve</h2>
+        <svg viewBox="0 0 800 240" preserveAspectRatio="none">
+          <rect x="0" y="0" width="800" height="240" fill="none"/>
+          <path d="M0.00 10.00 L5.00 15.51 L10.00 18.90 L15.00 16.78 L20.00 16.78 L25.00 16.78 L30.00 24.41 L35.00 20.17 L40.00 20.17 L45.00 29.92 L50.00 31.19 L55.00 31.19 L60.00 26.96 L65.00 33.31 L70.00 26.96 L75.00 26.96 L80.00 26.96 L85.00 26.96 L90.00 26.96 L95.00 43.06 L100.00 30.35 L105.00 36.71 L110.00 30.35 L115.00 36.71 L120.00 36.71 L125.00 48.57 L130.00 48.57 L135.00 33.74 L140.00 40.10 L145.00 42.22 L150.00 42.22 L155.00 42.22 L160.00 33.74 L165.00 33.74 L170.00 33.74 L175.00 33.74 L180.00 42.22 L185.00 33.74 L190.00 33.74 L195.00 48.57 L200.00 40.10 L205.00 48.57 L210.00 42.22 L215.00 33.74 L220.00 42.22 L225.00 40.10 L230.00 42.22 L235.00 33.74 L240.00 33.74 L245.00 42.22 L250.00 48.57 L255.00 42.22 L260.00 33.74 L265.00 40.10 L270.00 48.57 L275.00 42.22 L280.00 40.10 L285.00 33.74 L290.00 33.74 L295.00 42.22 L300.00 33.74 L305.00 33.74 L310.00 39.25 L315.00 54.08 L320.00 45.61 L325.00 41.37 L330.00 43.49 L335.00 51.12 L340.00 46.45 L345.00 46.45 L350.00 47.73 L355.00 54.08 L360.00 59.60 L365.00 61.71 L370.00 71.46 L375.00 67.23 L380.00 60.87 L385.00 52.39 L390.00 52.39 L395.00 52.39 L400.00 67.23 L405.00 68.50 L410.00 60.02 L415.00 65.53 L420.00 82.49 L425.00 82.49 L430.00 65.53 L435.00 65.53 L440.00 102.41 L445.00 110.89 L450.00 102.41 L455.00 119.36 L460.00 107.92 L465.00 97.32 L470.00 113.43 L475.00 113.43 L480.00 109.19 L485.00 118.94 L490.00 112.58 L495.00 112.58 L500.00 124.45 L505.00 124.45 L510.00 115.97 L515.00 115.97 L520.00 124.45 L525.00 124.45 L530.00 124.45 L535.00 115.97 L540.00 132.93 L545.00 124.45 L550.00 124.45 L555.00 115.97 L560.00 129.96 L565.00 113.01 L570.00 121.48 L575.00 121.48 L580.00 127.84 L585.00 127.84 L590.00 135.47 L595.00 152.43 L600.00 135.47 L605.00 118.52 L610.00 152.43 L615.00 152.43 L620.00 152.43 L625.00 135.47 L630.00 135.47 L635.00 136.74 L640.00 146.49 L645.00 142.25 L650.00 143.53 L655.00 143.53 L660.00 124.45 L665.00 135.05 L670.00 143.53 L675.00 156.24 L680.00 141.41 L685.00 141.41 L690.00 149.88 L695.00 164.72 L700.00 168.96 L705.00 152.00 L710.00 135.05 L715.00 132.93 L720.00 135.05 L725.00 126.57 L730.00 149.88 L735.00 152.00 L740.00 132.93 L745.00 149.88 L750.00 149.88 L755.00 152.00 L760.00 141.41 L765.00 143.53 L770.00 152.00 L775.00 156.24 L780.00 152.00 L785.00 149.88 L790.00 141.41 L795.00 132.93 L800.00 230.00" fill="none" stroke="var(--accent)" stroke-width="2"/>
+        </svg>
+        <div class="sub" style="margin:6px 0 0">min 994.81 &middot; max 1000.00</div>
+      </div>
+      <div class="panel" style="margin-top:20px">
+        <h2>Drawdown</h2>
+        <svg viewBox="0 0 800 140" preserveAspectRatio="none">
+          <path d="M0 0 L0.00 0.00 L5.00 3.38 L10.00 5.46 L15.00 4.16 L20.00 4.16 L25.00 4.16 L30.00 8.84 L35.00 6.24 L40.00 6.24 L45.00 12.23 L50.00 13.01 L55.00 13.01 L60.00 10.40 L65.00 14.31 L70.00 10.40 L75.00 10.40 L80.00 10.40 L85.00 10.40 L90.00 10.40 L95.00 20.29 L100.00 12.49 L105.00 16.39 L110.00 12.49 L115.00 16.39 L120.00 16.39 L125.00 23.67 L130.00 23.67 L135.00 14.57 L140.00 18.47 L145.00 19.77 L150.00 19.77 L155.00 19.77 L160.00 14.57 L165.00 14.57 L170.00 14.57 L175.00 14.57 L180.00 19.77 L185.00 14.57 L190.00 14.57 L195.00 23.67 L200.00 18.47 L205.00 23.67 L210.00 19.77 L215.00 14.57 L220.00 19.77 L225.00 18.47 L230.00 19.77 L235.00 14.57 L240.00 14.57 L245.00 19.77 L250.00 23.67 L255.00 19.77 L260.00 14.57 L265.00 18.47 L270.00 23.67 L275.00 19.77 L280.00 18.47 L285.00 14.57 L290.00 14.57 L295.00 19.77 L300.00 14.57 L305.00 14.57 L310.00 17.95 L315.00 27.05 L320.00 21.85 L325.00 19.25 L330.00 20.55 L335.00 25.23 L340.00 22.37 L345.00 22.37 L350.00 23.15 L355.00 27.05 L360.00 30.43 L365.00 31.73 L370.00 37.72 L375.00 35.12 L380.00 31.21 L385.00 26.01 L390.00 26.01 L395.00 26.01 L400.00 35.12 L405.00 35.90 L410.00 30.69 L415.00 34.08 L420.00 44.48 L425.00 44.48 L430.00 34.08 L435.00 34.08 L440.00 56.71 L445.00 61.91 L450.00 56.71 L455.00 67.11 L460.00 60.09 L465.00 53.58 L470.00 63.47 L475.00 63.47 L480.00 60.87 L485.00 66.85 L490.00 62.95 L495.00 62.95 L500.00 70.23 L505.00 70.23 L510.00 65.03 L515.00 65.03 L520.00 70.23 L525.00 70.23 L530.00 70.23 L535.00 65.03 L540.00 75.43 L545.00 70.23 L550.00 70.23 L555.00 65.03 L560.00 73.61 L565.00 63.21 L570.00 68.41 L575.00 68.41 L580.00 72.31 L585.00 72.31 L590.00 76.99 L595.00 87.40 L600.00 76.99 L605.00 66.59 L610.00 87.40 L615.00 87.40 L620.00 87.40 L625.00 76.99 L630.00 76.99 L635.00 77.77 L640.00 83.76 L645.00 81.16 L650.00 81.94 L655.00 81.94 L660.00 70.23 L665.00 76.73 L670.00 81.94 L675.00 89.74 L680.00 80.64 L685.00 80.64 L690.00 85.84 L695.00 94.94 L700.00 97.54 L705.00 87.14 L710.00 76.73 L715.00 75.43 L720.00 76.73 L725.00 71.53 L730.00 85.84 L735.00 87.14 L740.00 75.43 L745.00 85.84 L750.00 85.84 L755.00 87.14 L760.00 80.64 L765.00 81.94 L770.00 87.14 L775.00 89.74 L780.00 87.14 L785.00 85.84 L790.00 80.64 L795.00 75.43 L800.00 135.00 L800.00 0 Z" fill="rgba(248,81,73,0.18)" stroke="var(--red)" stroke-width="1.5"/>
+        </svg>
+      </div>
+    </div>
+    <div class="panel">
+      <h2>Statistics</h2>
+      <table><tr><td class="k">Strategy</td><td class="v">logistic_arb</td></tr>
+<tr><td class="k">Currency</td><td class="v">USD</td></tr>
+<tr><td class="k">Starting balance</td><td class="v">1000.00</td></tr>
+<tr><td class="k">Ending balance</td><td class="v">994.81</td></tr>
+<tr><td class="k">PnL</td><td class="v">-5.19 (-0.52%)</td></tr>
+<tr><td class="k">Total orders</td><td class="v">31</td></tr>
+<tr><td class="k">Fills</td><td class="v">31</td></tr>
+<tr><td class="k">Round-trips</td><td class="v">7</td></tr>
+<tr><td class="k">Win rate</td><td class="v">0.0%</td></tr>
+<tr><td class="k">Avg buy price</td><td class="v">0.7004</td></tr>
+<tr><td class="k">Avg sell price</td><td class="v">0.6850</td></tr>
+<tr><td class="k">Sharpe (per-snap)</td><td class="v">-0.114</td></tr>
+<tr><td class="k">Sortino (per-snap)</td><td class="v">-0.084</td></tr>
+<tr><td class="k">Max drawdown</td><td class="v">5.19 (0.5%)</td></tr>
+<tr><td class="k">Calmar</td><td class="v">-1.000</td></tr>
+<tr><td class="k">Volatility (per-snap)</td><td class="v">0.00029</td></tr>
+<tr><td class="k">Profit factor</td><td class="v">-0.000</td></tr>
+<tr><td class="k">Expectancy</td><td class="v">-0.6386</td></tr>
+<tr><td class="k">Payoff ratio</td><td class="v">0.000</td></tr>
+<tr><td class="k">Avg win / loss</td><td class="v">0.000 / 0.639</td></tr>
+<tr><td class="k">Largest win / loss</td><td class="v">0.00 / -0.94</td></tr>
+<tr><td class="k">Max consec W / L</td><td class="v">0 / 7</td></tr>
+<tr><td class="k">Exposure</td><td class="v">98.8%</td></tr>
+<tr><td class="k">Avg holding (s)</td><td class="v">4217.1</td></tr>
+<tr><td class="k">Volume (contracts)</td><td class="v">480</td></tr>
+<tr><td class="k">Turnover</td><td class="v">0.33x</td></tr>
+<tr><td class="k">Total fees</td><td class="v">1.49</td></tr>
+<tr><td class="k">Fees % of gross</td><td class="v">0.0%</td></tr>
+<tr><td class="k">Slippage cost</td><td class="v">0.00</td></tr>
+<tr><td class="k">Liquidity rewards</td><td class="v">0.00</td></tr>
+<tr><td class="k">Gross PnL (ex costs)</td><td class="v">-3.70</td></tr></table>
+    </div>
+  </div>
+</div></body></html>

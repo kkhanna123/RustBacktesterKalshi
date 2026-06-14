@@ -1,0 +1,14 @@
+{
+  "kind": "delta",
+  "venue": "GENERIC",
+  "instrument_col": "symbol",
+  "ts_col": "ts_ms",
+  "ts_unit": "ms",
+  "price_col": "price_cents",
+  "price_scale": "cents",
+  "size_col": "size",
+  "side_col": "side",
+  "action_col": "action",
+  "sequence_col": "seq",
+  "is_snapshot_col": "is_snapshot"
+}

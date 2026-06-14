@@ -1,0 +1,12 @@
+{
+  "snapshot_mode": true,
+  "venue": "GENERIC",
+  "instrument_col": "market",
+  "ts_col": "ts_s",
+  "ts_unit": "s",
+  "price_col": "price",
+  "price_scale": "prob",
+  "size_col": "size",
+  "side_col": "side",
+  "price_decimals": 4
+}

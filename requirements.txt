@@ -1,0 +1,21 @@
+# Python dependencies for the Kalshi backtester stack (collector, analytics, dashboard, tools, notebook).
+# Create a venv and install:  python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+# Engage it:                   source .venv/bin/activate
+
+# --- collector (Kalshi WS/REST -> NDJSON + ClickHouse) ---
+requests
+websocket-client==1.8.0
+cryptography
+
+# --- data / analytics (greeks, implied distribution) ---
+pandas
+numpy
+scipy
+pyarrow
+
+# --- plotting / tools / capstone / risk report ---
+matplotlib
+
+# --- research notebook (optional but used by notebooks/) ---
+jupyter
+nbconvert

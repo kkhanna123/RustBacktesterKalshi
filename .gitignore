@@ -1,0 +1,44 @@
+# ClickHouse native binary + data
+bin/clickhouse
+clickhouse/_data/
+*.log
+
+# Rust
+backtester/target/
+**/*.rs.bk
+
+# Data captures (regenerated; can be large)
+data/raw/
+data/parquet/
+*.ndjson
+*.ndjson.gz
+*.parquet
+# ...but DO ship the small synthetic demo ladder so the repo is runnable out of the box.
+!data/tick/natgas_tick_demo.ndjson.gz
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS
+.DS_Store
+
+# Secrets — NEVER commit Kalshi keys
+*.pem
+.env
+kalshi_private_key*
+KalshiAPIKeysDONOTPUSH/
+**/.api_keys
+*api_key*
+*API_KEY*
+
+# ClickHouse server artifacts that land at repo root
+/access/
+/preprocessed_configs/
+/status
+
+# UI control-panel runtime cache
+ui/runs/
+ui/calibration.json

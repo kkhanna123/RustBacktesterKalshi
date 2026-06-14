@@ -1,0 +1,38 @@
+[package]
+name = "kalshi_backtester"
+version = "0.1.0"
+edition = "2021"
+description = "Event-driven tick-level backtester for Kalshi orderbook-delta data (NatGas and any series)"
+
+[[bin]]
+name = "kalshi-backtest"
+path = "src/main.rs"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+csv = "1"
+clap = { version = "4", features = ["derive"] }
+chrono = { version = "0.4", features = ["serde"] }
+anyhow = "1"
+thiserror = "1"
+ordered-float = "4"
+flate2 = "1"          # read .ndjson.gz captures (pure-Rust miniz backend; portable)
+# ureq with rustls (pure-Rust TLS, no native-tls/OpenSSL) so the ClickHouse HTTP source builds
+# and runs identically on Windows/macOS/Linux without a system OpenSSL.
+ureq = { version = "2", optional = true, default-features = false, features = ["json", "tls"] }
+# Always-on so `kalshi-backtest backtest --config run.toml` and TOML ClickHouse schema maps work
+# out of the box (TOML is the documented on-ramp format emitted by `init-config`). JSON also works
+# everywhere via serde_json — no feature flag needed for either format.
+toml = { version = "0.8" }
+
+[features]
+default = []
+clickhouse = ["dep:ureq"]
+# Back-compat no-op: the `toml` feature used to gate the optional toml dependency. TOML is now an
+# always-on dependency, so enabling this feature changes nothing (kept so old build commands work).
+toml = []
+
+[profile.release]
+opt-level = 3
+lto = "thin"

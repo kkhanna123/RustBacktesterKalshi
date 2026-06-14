@@ -1,0 +1,12 @@
+{
+  "kind": "trade",
+  "venue": "GENERIC",
+  "instrument_col": "ticker",
+  "ts_col": "time",
+  "ts_unit": "iso",
+  "price_col": "price",
+  "price_scale": "dollars",
+  "size_col": "qty",
+  "aggressor_col": "taker_side",
+  "trade_id_col": "trade_id"
+}
